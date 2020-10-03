@@ -1,10 +1,6 @@
-This module is used to share a .  You must have a AWS default profile configured as well as a profile for the 
-account for the protected VPC.  Define this in your main.tf using the below block in the module:
+These are modules are used to help create cloud infrastructure to support a Valtix gateway deployment
 
-  providers = {
-    aws.protected = aws.<alias>
-  }
+Currently this is supported on a best effort basis.  Please feel free to reach out to support@valtix.com if you have any questions or issues using these modules.
 
 ## Terraform versions
-
-Only Terraform 0.12 or newer is supported.
+These modules have only been tested using versions 0.12 and above
