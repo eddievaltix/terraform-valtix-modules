@@ -16,3 +16,11 @@ variable "valtix_gateway_name" {
 variable "resource_group_name" {
   description = "Name of the resource group"
 }
+
+variable "mgmt_vpc_cidr" {
+  description = "CIDR block of the mgmt VPC for Valtix Gateway"
+}
+
+variable "datapath_vpc_cidr" {
+  description = "CIDR block of the datapath VPC for Valtix Gateway"
+}
