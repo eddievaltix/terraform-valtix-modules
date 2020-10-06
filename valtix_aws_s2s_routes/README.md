@@ -1,0 +1,1 @@
+This module updates routes in Valtix datapath subnet and Transit Gateway VPC attachment route table for use with site-to-site VPN connections to Transit Gateway.  

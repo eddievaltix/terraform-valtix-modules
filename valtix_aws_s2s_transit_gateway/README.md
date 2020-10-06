@@ -1,0 +1,1 @@
+This module creates a components needed to support AWS Site to Site VPN tunnel terminating on Transit Gateway.  A Transit Gateway Route Table is also made to ensure all traffic flows through the Valtix East West Gateway
