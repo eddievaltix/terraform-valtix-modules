@@ -1,5 +1,5 @@
-variable "transit_gateway_id" {
-  description = "ID of the transit gateway where VPN conn is made"
+variable "transit_gateway_name" {
+  description = "name of the transit gateway where VPN conn is made"
 }
 
 variable "customer_gateway_ip" {

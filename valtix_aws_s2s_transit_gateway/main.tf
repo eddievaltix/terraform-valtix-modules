@@ -3,7 +3,10 @@
 ########################################################
 
 data "aws_ec2_transit_gateway" "it" {
-  id = var.transit_gateway_id
+  filter {
+    name = "tag:Name"
+    values = [var.transit_gateway_name]
+  }
 }
 
 data "aws_ec2_transit_gateway_vpn_attachment" "it" {

@@ -1,1 +1,0 @@
-This module updates the protected VPC subnet route tables for the Valtix gateway services VPC CIDR (or default route for Valtix Egress Gateway) to Transit Gateway

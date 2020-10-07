@@ -1,0 +1,1 @@
+This module creates the Transit Gateway attachment and Transit Gateway attachment route table for a Valtix Protected VPC
