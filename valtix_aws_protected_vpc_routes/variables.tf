@@ -12,11 +12,11 @@ variable "is_egress" {
 }
 
 variable "protected_vpc_attachment_id" {
-  description = "protected VPC Transit Gateway attachment ID. This is an output from valtix_aws_protected_vpc module"
+  description = "protected VPC Transit Gateway attachment ID"
 }
 
 variable "protected_vpc_attachment_route_table_id" {
-  description = "this is the protected VPC attachment route table ID.  This is an output from valtix_aws_protected_vpc module"
+  description = "this is the protected VPC attachment route table ID"
 }
 
 variable "protected_vpc_subnet_ids" {
