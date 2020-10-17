@@ -48,8 +48,6 @@ resource "aws_internet_gateway" "it" {
 
 # Two subnets per AZ, called pub, priv.
 # subnets are created in each of the zones
-# 10.0.0.0 priv, 10.0.1.0 pub and it continues in other zones in increments of 3
-# (10.0.2.0 and its peers are not used or reserved for future expansion)
 
 resource "aws_subnet" "it_priv" {
   vpc_id            = aws_vpc.it.id
@@ -236,12 +234,12 @@ resource "aws_instance" "it_pub" {
   subnet_id                   = aws_subnet.it_pub[0].id
 
   provisioner "file" {
-    source        = format("${dirname(path.cwd)}/%s", var.prv_key_file_path)
+    source        = format("${path.cwd}/%s", var.prv_key_file_path)
     destination   = "/home/centos/.ssh/id_rsa"
     connection {
       type        = "ssh"
       user        = "centos"
-      private_key = file(format("${dirname(path.cwd)}/%s", var.prv_key_file_path))
+      private_key = file(format("${path.cwd}/%s", var.prv_key_file_path))
       host        = aws_instance.it_pub.public_ip
     }
   }
@@ -250,7 +248,7 @@ resource "aws_instance" "it_pub" {
     connection {
       type        = "ssh"
       user        = "centos"
-      private_key = file(format("${dirname(path.cwd)}/%s", var.prv_key_file_path))
+      private_key = file(format("${path.cwd}/%s", var.prv_key_file_path))
       host        = aws_instance.it_pub.public_ip
     }
   }

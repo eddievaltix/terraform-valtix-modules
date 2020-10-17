@@ -11,7 +11,7 @@ variable "subnet_bits" {
 }
 
 variable "zones" {
-  description = "All the resource will be created with this prefix Example : qa-saahil-terraform"
+  description = "the number of availability zones that will be used.  Will determine the number of instances to deploy (in each AZ)"
   default = 2
 }
 
@@ -26,12 +26,10 @@ variable "create_key" {
 
 variable "pub_key_file_path" {
   description = "relative path to the public key file for key pair creation"
-  default = "../keys/key.pub"
 }
 
 variable "prv_key_file_path" {
   description = "relative path to the private key file to add to id_rsa in instances"
-  default = "../keys/key.pub"
 }
 
 variable "instance_type" {
