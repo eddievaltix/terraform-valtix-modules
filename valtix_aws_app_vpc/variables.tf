@@ -1,8 +1,13 @@
 variable "prefix" {
     description = "prefix for allb resources created in this VPC"
 }
+
 variable "vpc_cidr" {
   description = "CIDR block of the VPC"
+}
+
+variable "ami_id" {
+  description = "AMI to deploy for example EC2 instances"
 }
 
 variable "subnet_bits" {
