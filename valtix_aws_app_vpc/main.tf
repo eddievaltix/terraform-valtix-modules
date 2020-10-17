@@ -3,6 +3,12 @@
 ######################################
 data "aws_availability_zones" "available" {}
 
+data "aws_ami" "it" {	
+  most_recent = true	
+  owners      = ["902505820678"]	
+  name_regex  = "^valtix-sandbox-server"	
+}
+
 resource "aws_key_pair" "it" {
   key_name   = var.key_name
   public_key = file(format("${dirname(path.cwd)}/%s", var.pub_key_file_path))
@@ -186,7 +192,7 @@ resource "aws_security_group" "it_priv" {
 
 # create 1 backend host in each zone
 resource "aws_instance" "it_priv" {
-  ami                         = var.ami_id
+  ami                         = data.aws_ami.it.id
   associate_public_ip_address = true
 
   count                       = var.zones
@@ -220,7 +226,7 @@ EOF
 
 # one instance for jumpbox
 resource "aws_instance" "it_pub" {
-  ami                         = var.ami_id
+  ami                         = data.aws_ami.it.id
   associate_public_ip_address = true
   key_name                    = var.key_name
   instance_type               = var.instance_type
