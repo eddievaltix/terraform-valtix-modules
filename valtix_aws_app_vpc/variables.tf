@@ -6,10 +6,6 @@ variable "vpc_cidr" {
   description = "CIDR block of the VPC"
 }
 
-variable "ami_id" {
-  description = "AMI to deploy for example EC2 instances"
-}
-
 variable "subnet_bits" {
   description = "Number of additional bits (on top of the vpc cidr mask) to use in the subnets inside VPC (final subnet would be the mask of vpc cidr + the value provided for this variable)"
   default = 8
